@@ -18,8 +18,11 @@ async function scrapeAPI(url){
 
   let filterout = price;
   filterout = price.filter(e => e !== 'filtered by'); // Filters out "filtered by"
-
-  console.log(filterout); // Logs the fitered API response into the console & displays it 
+  let priceShit = filterout.splice(0, 2);
+  let nameShit = nameArray.splice(0, 1);
+  console.log(nameShit);
+  console.log(priceShit); // Logs the fitered API response into the console & displays it 
+  console
   browser.close();
 }
 

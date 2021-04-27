@@ -5,4 +5,4 @@ This currently is very barebones. While it can grab the games on sale & their pr
 
 Anyone can use this in a project, as long as (some) credit is given that is fine
 
-*Currently now only the first game on sale is shown, this might be expanded in the future soon.
+*Currently now only the 10 games on sale is shown, this might be expanded in the future soon.

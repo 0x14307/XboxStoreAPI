@@ -49,9 +49,9 @@ async function scrapeAPI(url) {
   }
   let multidimensionalPriceArray = TwoDimensional(filteroutGold, 2);
   // console.log(multidimensionalPriceArray)
-  let number = nameArray.length;
-  // Output first 10 Deals 
-  for (let i = 0; i < number; i++) {
+  
+  // Output first 50 Deals 
+  for (let i = 0; i < 50; i++) {
     console.log(nameArray[i] + " ➡️ " + " " + multidimensionalPriceArray[i][0] + " 🚀 " + multidimensionalPriceArray[i][1]);
   }
 

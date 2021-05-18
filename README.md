@@ -1,4 +1,7 @@
 # xbox-api
-Simple web scraper to get games &amp; prices that are on sale on Xbox.
 
-Anyone can use this in a project, as long as (some) credit is given that is fine
+(Okay, so this isn't an actual API, but I didn't know what to call it so its this at the moment.)
+
+Regardless, this is a simple web scraper to get prices for games & DLC that are on sale on Xbox.
+
+Anyone can use this in a project, as long as the source to this is given.

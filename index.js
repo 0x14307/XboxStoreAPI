@@ -5,7 +5,6 @@ async function scrapeAPI(url) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
-  // Currently WIP (Needs filtering as well as making sure stuff shows up)
 
   const nameArray = await page.evaluate(
     () =>
@@ -18,16 +17,8 @@ async function scrapeAPI(url) {
     () =>
       [...document.querySelectorAll("div div span.x-screen-reader")].map(
         (partner) => partner.innerText
-      ) //Gets prices (currently garbage, needs cleaning)
+      )
   );
-  /*  console.log(
-    `The first game on sale is ${nameArray[0]} - the ${priceArray[1]} and ${priceArray[2]}`
-  );
-  console.log(
-    `The first game on sale is ${nameArray[1]} - the ${priceArray[2]} and ${priceArray[3]}`
-  ); */
-
-  console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
 
   let price = priceArray;
   price = priceArray.filter((e) => e !== "Game Pass"); // Filters out unwanted items
@@ -52,20 +43,9 @@ async function scrapeAPI(url) {
   
   // Output first 50 Deals 
   for (let i = 0; i < 50; i++) {
-    console.log(nameArray[i] + " ➡️ " + " " + multidimensionalPriceArray[i][0] + " 🚀 " + multidimensionalPriceArray[i][1]);
+    console.log(nameArray[i] + " | " + " " + multidimensionalPriceArray[i][0] + ", " + multidimensionalPriceArray[i][1]);
   }
-
   console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-  //let priceShit = filterout.splice(0, 2);
-  //let nameShit = nameArray.splice(0, 1);
-  //console.log(nameShit);
-  //console.log(priceShit); // Logs the fitered API response into the console & displays it console;
-
-  console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-  // console.log(filterout);
-  // console.log(nameArray);
   browser.close();
 }
 

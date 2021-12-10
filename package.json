@@ -1,19 +1,5 @@
 {
-  "name": "scraper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.10",
-    "colors": "^1.4.0",
-    "puppeteer": "^5.5.0",
-    "request-promise": "^4.2.6"
+    "puppeteer": "^12.0.1"
   }
 }

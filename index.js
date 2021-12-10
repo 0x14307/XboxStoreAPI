@@ -20,6 +20,14 @@ async function scrapeAPI(url) {
       )
   );
 
+  
+  const imgArray = await page.evaluate(
+    () =>
+      [...document.querySelectorAll("div.c-channel-placement-image img")].map(
+        (img) => img.getAttribute('src')
+      )
+  );
+
   let price = priceArray;
   price = priceArray.filter((e) => e !== "Game Pass"); // Filters out unwanted items
 
@@ -32,21 +40,38 @@ async function scrapeAPI(url) {
   console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
 
   // Put price information into a multidimensional array (Full and Now Price)
-  function TwoDimensional(arr, size) {
+  function TwoDimensional(arr, size) 
+  {
     var res = [];
     for (var i = 0; i < arr.length; i = i + size)
       res.push(arr.slice(i, i + size));
       return res
   }
+
   let multidimensionalPriceArray = TwoDimensional(filteroutGold, 2);
-  // console.log(multidimensionalPriceArray)
-  
-  // Output first 50 Deals 
+
   for (let i = 0; i < 50; i++) {
-    console.log(nameArray[i] + " | " + " " + multidimensionalPriceArray[i][0] + ", " + multidimensionalPriceArray[i][1]);
+    const key = 
+    [
+       "name",
+       "formerPrice",
+       "salePrice",
+      // "img"
+    ]
+    
+    let value = 
+    [
+      nameArray[i], multidimensionalPriceArray[i][0], multidimensionalPriceArray[i][1], //imgArray
+    ]
+    
+    let object = (first, second) => {return first.reduce((game, val, ind) => {
+      game[val] = second[ind];
+      return game;
+    }, {});
+    };
+    
+    console.log(object(key, value))
   }
-  console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
   browser.close();
 }
-
 scrapeAPI("https://www.microsoft.com/en-us/store/deals/games/xbox");

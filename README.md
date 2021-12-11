@@ -1,7 +1,9 @@
-# xbox-api
+# Xbox Store API
 
-(Okay, so this isn't an actual API, but I didn't know what to call it so its this at the moment.)
+This is a web scraper that gets data from the Xbox website of games currently on sale and displays the name, former price, and current sale price.
 
-Regardless, this is a simple web scraper to get prices for games & DLC that are on sale on Xbox.
+Currently it isn't a full API (yety) but if you know how to get an express server running you'd probably be fine.
 
-Anyone can use this in a project, as long as the source to this is given.
+I'm planning to add support to get links to the actual products themselves aswell as some other things. 
+
+PRs accepted. Just make sure to obey the license
